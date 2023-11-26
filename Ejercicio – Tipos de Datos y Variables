@@ -1,0 +1,34 @@
+def convertir_valor(valor):
+    base = 10
+    if valor.startswith('0b') or valor.startswith('0B'):
+        base = 2
+        valor = valor[2:]
+    elif valor.startswith('0o') or valor.startswith('0O'):
+        base = 8
+        valor = valor[2:]
+    elif valor.startswith('0x') or valor.startswith('0X'):
+        base = 16
+        valor = valor[2:]
+    return int(valor, base)
+A = input("elige la operacion a realizar 'suma', 'resta', 'multiplicacion', 'division' o 'potencia' : ")
+print("\n")
+x = input("ingresa el digito x: ")
+x = convertir_valor(x)
+y = input("ingresa el digito y: ")
+y = convertir_valor(y)
+
+if A == 'suma' :
+  print("\n")
+  print(x + y)
+elif A == 'resta':
+  print("\n")
+  print(x - y)
+elif A == 'multiplicacion' :
+  print("\n")
+  print(x * y)
+elif A == 'division':
+  print("\n")
+  print(x // y)
+elif A == 'potencia':
+  print("\n")
+  print(x ** y)
